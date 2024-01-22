@@ -1,7 +1,7 @@
 const key = '41828339-4484571af3c8494d167e1d483'
 
 const displayForm = document.querySelector("#displaySection")
-const startButton = document.querySelector("startGame button")
+const startButton = document.querySelector("#startGame button")
 
 
 
@@ -23,4 +23,3 @@ const displayCapitalName = () => {
 }
 
 startButton.addEventListener('click', displayCapitalName)
-
