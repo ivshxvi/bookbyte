@@ -19,6 +19,11 @@ app.get("/geo/:country", (req,res) => {
     : res.send(geoFiltered)
 })
 
+app.get("/random", (req,res) => {
+    let randIdx = Math.floor(Math.random() * geo.length)
+    res.send(geo[randIdx]);
+})
+
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
 })
