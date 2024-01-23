@@ -43,6 +43,7 @@ const getPicture = async (capital) => {
 const placePicture = (picUrl) => {
     const pic = document.createElement("img")
     pic.src = picUrl
+    pic.classList.add("img")
     pic.addEventListener("click", (f) => f.target.remove(),{once:true})
     gameplaySection.appendChild(pic)
     
