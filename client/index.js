@@ -1,8 +1,10 @@
 const displayForm = document.querySelector("#displaySection")
 const startButton = document.querySelector("#gameplaySection button")
 const submitButton = document.querySelector("#userInputSection")
+const scoreBoard = document.querySelector("#score")
 
 let countryData
+
 
 const getCountry = async () => {
     try {
@@ -17,17 +19,28 @@ startButton.addEventListener('click', (e) => {
     const capitalName = document.querySelector("#capitalName")
     e.preventDefault()
     getCountry().then((data) => {
+        removePicture()
         console.log(data.name)
-        capitalName.textContent = data.name
+        capitalName.textContent = data.capital
         placePicture(data.flag)
+        message.textContent = ""
     })
 
 })
 
+let score = 0
+
 submitButton.addEventListener("submit", async (e) => {
     e.preventDefault()
     const userInput = document.getElementById('userInput').value;
-    console.log(userInput === countryData.name);
+    const message = document.querySelector("#message")
+    if (userInput === countryData.name){
+        message.textContent = `You guessed right, this is ${countryData.name}`
+        score += 1
+        scoreBoard.textContent = `Score: ${score}`
+    } else {
+        message.textContent = "You are wrong!"
+    }
 })
 
 
@@ -39,3 +52,11 @@ const placePicture = (picUrl) => {
     gameplaySection.appendChild(pic)
 
 }
+
+const removePicture = () => {
+    const pic = document.querySelector(".img")
+    if (pic) {
+        pic.remove()
+    }
+}
+
