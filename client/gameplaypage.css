@@ -24,7 +24,7 @@ header {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
-    
+
 }
 
 #gameplaySection {
@@ -84,7 +84,8 @@ label {
     margin-bottom: 10px;
 }
 
-input[type="text"], input[type="submit"] {
+input[type="text"],
+input[type="submit"] {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -105,19 +106,19 @@ input[type="submit"]:hover {
 }
 
 .img {
-    max-width: 100%; 
-    height: auto; 
-    margin-top: 20px; 
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
     width: 100%;
-    max-width: 300px; 
+    max-width: 300px;
 
 }
 
 .start-button {
     background-color: #ef8644;
     color: white;
-    padding: 10px 20px; 
-    font-size: 16px; 
+    padding: 10px 20px;
+    font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -137,4 +138,32 @@ input[type="submit"]:hover {
     color: black;
     width: 20%;
     font-weight: normal;
+}
+
+.flash-red {
+    animation: flash-red 0.5s;
+}
+
+.flash-green {
+    animation: flash-green 0.5s;
+}
+
+@keyframes flash-red {
+    0% {
+        background-color: red;
+    }
+
+    100% {
+        background-color: inherit;
+    }
+}
+
+@keyframes flash-green {
+    0% {
+        background-color: green;
+    }
+
+    100% {
+        background-color: inherit;
+    }
 }
