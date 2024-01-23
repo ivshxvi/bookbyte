@@ -1,50 +1,41 @@
-const key = '41828339-4484571af3c8494d167e1d483'
-
 const displayForm = document.querySelector("#displaySection")
 const startButton = document.querySelector("#gameplaySection button")
+const submitButton = document.querySelector("#userInputSection")
 
+let countryData
 
-const displayCapitalName = () => {
+const getCountry = async () => {
+    try {
+        const response = await fetch('http://localhost:3000/random')
+        const data = await response.json()
+        countryData = data
+        return data
+    } catch (e) { console.error(e) }
+}
+
+startButton.addEventListener('click', (e) => {
     const capitalName = document.querySelector("#capitalName")
-    const userInput = document.querySelector("#userInput")
-    const message = document.querySelector("#message")
-    
-    fetch("http://localhost:3000/random")
-    .then((data) => data.json())
-    .then((item) => {
-        console.log(typeof item.name)
-        console.log(typeof userInput)
-        console.log(userInput.value)
-        capitalName.textContent = item.capital
-        getPicture(item.capital)
-
-        // THE LOGIC BELOW SHOULD BE IN AN ASYNC FUNCTION
-
-        // if(userInput.value.toLowerCase() === item.name.toLowerCase()) {
-        //     message.textContent = `You guessed right, this is ${item.name}`
-        // } else {
-        //     message.textContent = "You are wrong!"
-        // }
+    e.preventDefault()
+    getCountry().then((data) => {
+        console.log(data.name)
+        capitalName.textContent = data.name
+        placePicture(data.flag)
     })
-}
 
-startButton.addEventListener('click', displayCapitalName)
+})
 
-const getPicture = async (capital) => {
-    try{
-        const resp = await fetch(`https://pixabay.com/api/?key=${key}&q=${capital}`)
-        const data = await resp.json()
-        placePicture(data.hits[0].previewURL)
-    } catch(err){
-        console.error(err)
-    }   
-}
+submitButton.addEventListener("submit", async (e) => {
+    e.preventDefault()
+    const userInput = document.getElementById('userInput').value;
+    console.log(userInput === countryData.name);
+})
+
 
 const placePicture = (picUrl) => {
     const pic = document.createElement("img")
     pic.src = picUrl
     pic.classList.add("img")
-    pic.addEventListener("click", (f) => f.target.remove(),{once:true})
+    pic.addEventListener("click", (f) => f.target.remove(), { once: true })
     gameplaySection.appendChild(pic)
-    
+
 }
