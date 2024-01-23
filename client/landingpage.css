@@ -1,0 +1,60 @@
+body {
+    font-family: Garamond , serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 5px;
+    background-color: white;
+    color: black;
+}
+
+.logo img {
+    max-width: 30%;
+    height: auto;
+}
+
+.welcome-text {
+    font-size: 40px;
+    margin: 10px 0 0;
+}
+
+#gameModesSection {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.select-game-text {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.game-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.game-button {
+    background-color: #3b636e;
+    width: 18%;
+    color: white;
+    padding: 100px 50px;
+    font-size: 40px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgb(0, 0, 0);
+    cursor: pointer;
+    margin: 0 -10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.game-button:hover {
+    background-color: #ef8644;
+    transform: scale(1.1);
+}
+
+.game-button:active {
+    transform: scale(0.9);
+}

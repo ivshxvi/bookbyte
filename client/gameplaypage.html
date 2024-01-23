@@ -10,14 +10,14 @@
 </head>
 <body>
     <header>
-        <button class= "home-button" onclick="goHome()">Home</button>
+        <button onclick="goHome()">Home</button>
         <h1 class="game-mode">Game Mode</h1>
-        <div class="timer">Time: 00:00</div>
-        <div class="scoreboard">Score: 0</div>
+        <div id = "timer" class="timer">02:00</div>
+        <div id = "score" class="scoreboard">Score: 0</div>
     </header>
     
     <section id="gameplaySection">
-        <h2 id="capitalName">Capital City</h2>
+        <h2 id="capitalName">Game  Mode</h2>
         <button id = "startButton" class = "start-button">Start</button>
         <p id="message"></p>
     </section>
@@ -26,7 +26,7 @@
         <form>
             <label for="userInput"> Enter your guess country</label>
             <input type="text" name="country" id="userInput" placeholder="e.g. UK" required>
-            <input type="submit" value="Submit">
+            <input type="submit" value="submit">
         </form>
     </section>
     

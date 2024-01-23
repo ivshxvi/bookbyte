@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GeoQuest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="landingpage.css">
+    <script src="index.js" defer></script>
 </head>
 <body>
-    
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <h1 class="welcome-text">Welcome!</h1>
+    </header>
+
+    <section id="gameModesSection">
+        <p class="select-game-text">Please select a game mode:</p>
+        <div class="game-buttons">
+            <button class="game-button" onclick="selectGameMode('Mode 1')">Capital Cities</button>
+            <button class="game-button" onclick="selectGameMode('Mode 2')">Flags</button>
+            <button class="game-button" onclick="selectGameMode('Mode 3')">Currency</button>
+            <button class="game-button" onclick="selectGameMode('Mode 4')">Languages</button>
+            <button class="game-button" onclick="selectGameMode('Mode 5')">Phone Code</button>
+        </div>
+    </section>
 </body>
 </html>
