@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "name": "united kingdom",
+        "capital": "london",
+        "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/255px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
+        "phone_code": "+44",
+        "currency_name": "great british pounds",
+        "currency_symbol": "£",
+        "language": "english"
+    },
+    {
+        "id": "2",
+        "name": "france",
+        "capital": "paris",
+        "flag": "",
+        "phone_code": "+33",
+        "currency_name": "euro",
+        "currency_symbol": "€",
+        "language": "france"
+    },
+    {
+        "id": "3",
+        "name": "spain",
+        "capital": "madrid",
+        "flag": "",
+        "phone_code": "+34",
+        "currency_name": "euro",
+        "currency_symbol": "€",
+        "language": "spanish"
+    },
+    {
+        "id": "4",
+        "name": "australia",
+        "capital": "canberra",
+        "flag": "",
+        "phone_code": "+61",
+        "currency_name": "australian dollar",
+        "currency_symbol": "$",
+        "language": "english"
+    }
+]
