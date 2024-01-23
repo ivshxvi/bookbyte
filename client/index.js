@@ -3,6 +3,12 @@ const startButton = document.querySelector("#gameplaySection button")
 const submitButton = document.querySelector("#userInputSection")
 const scoreBoard = document.querySelector("#score")
 
+// window.addEventListener('beforeunload', function (e) {
+//     var confirmationMessage = 'Are you sure you want to leave? Your score will be lost!'
+//     e.returnValue = confirmationMessage || undefined
+//     return confirmationMessage
+// })
+
 let countryData
 
 
@@ -17,6 +23,7 @@ const getCountry = async () => {
 
 startButton.addEventListener('click', (e) => {
     const capitalName = document.querySelector("#capitalName")
+    const randomiseTag = document.querySelector("#randomise")
     e.preventDefault()
     getCountry().then((data) => {
         removePicture()
@@ -24,6 +31,7 @@ startButton.addEventListener('click', (e) => {
         capitalName.textContent = data.capital
         placePicture(data.flag)
         message.textContent = ""
+        randomiseTag.textContent = "Next"
     })
 
 })
@@ -34,7 +42,7 @@ submitButton.addEventListener("submit", async (e) => {
     e.preventDefault()
     const userInput = document.getElementById('userInput').value;
     const message = document.querySelector("#message")
-    if (userInput === countryData.name){
+    if (userInput === countryData.name) {
         message.textContent = `You guessed right, this is ${countryData.name}`
         score += 1
         scoreBoard.textContent = `Score: ${score}`
