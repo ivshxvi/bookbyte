@@ -1,13 +1,13 @@
 body {
-    font-family: Garamond , serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #e9ebe4;
 }
 
 header {
     text-align: center;
-    padding: 5px;
-    background-color: white;
+    padding: 20px;
     color: black;
 }
 
@@ -18,12 +18,12 @@ header {
 
 .welcome-text {
     font-size: 40px;
-    margin: 10px 0 0;
+    margin: 10px 0 20px;
 }
 
 #gameModesSection {
     text-align: center;
-    margin-top: 5px;
+    margin-top: 20px;
 }
 
 .select-game-text {
@@ -37,24 +37,35 @@ header {
 }
 
 .game-button {
-    background-color: #3b636e;
-    width: 18%;
+    background-color: #9d73a8d8;
+    width: 13%;
     color: white;
-    padding: 100px 50px;
-    font-size: 40px;
+    padding: 25px 5px;
+    font-size: 30px;
     border: none;
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgb(0, 0, 0);
+    box-shadow: 0 2px 4px rgb(77, 77, 77);
     cursor: pointer;
-    margin: 0 -10px;
+    margin: 0 20px;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .game-button:hover {
-    background-color: #ef8644;
+    background-color: #ba46088e;
     transform: scale(1.1);
 }
 
 .game-button:active {
     transform: scale(0.9);
+}
+
+.lower-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; 
+}
+
+.lower-buttons .game-button {
+    width: 13%;
+    margin: 0 20px;
 }

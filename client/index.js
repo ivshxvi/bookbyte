@@ -6,6 +6,16 @@ const submitButton = document.querySelector("#userInputSection")
 const scoreBoard = document.querySelector("#score")
 
 
+window.addEventListener('beforeunload', function (e) {
+    var confirmationMessage = 'Are you sure you want to leave? Your score will be lost!'
+    e.returnValue = confirmationMessage || undefined
+    return confirmationMessage
+})
+
+document.querySelector("#userInputSection").style.display = "none"
+
+
+
 let countryData
 
 
@@ -25,13 +35,16 @@ const getCountry = async () => {
 
 startButton.addEventListener('click', (e) => {
     const capitalName = document.querySelector("#capitalName")
+    const randomiseTag = document.querySelector("#randomise")
     e.preventDefault()
+    document.querySelector("#userInputSection").style.display = "block"
     getCountry().then((data) => {
         removePicture()
         console.log(data.name)
         capitalName.textContent = data.capital
         placePicture(data.capital_picture)
         message.textContent = ""
+        randomiseTag.textContent = "Next"
     })
 
 })
@@ -43,8 +56,10 @@ submitButton.addEventListener("submit", async (e) => {
     e.preventDefault()
     const userInput = document.getElementById('userInput').value;
     const message = document.querySelector("#message")
+
     if (countryData.name.includes(userInput)){
         message.textContent = `You guessed right, this is ${countryData.name}`
+        message.classList.add('flash-green')
         score += 1
         scoreBoard.textContent = `Score: ${score}`
         successHistory.push(countryData)
@@ -53,7 +68,12 @@ submitButton.addEventListener("submit", async (e) => {
     } else {
         message.textContent = "You are wrong!"
 
+        message.classList.add('flash-red')
+
     }
+    setTimeout(() => {
+        message.classList.remove('flash-red', 'flash-green')
+    }, 500)
 })
 
 
