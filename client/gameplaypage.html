@@ -11,28 +11,38 @@
 </head>
 
 <body>
-    <header>
-        <button onclick="goHome()">Home</button>
-        <h1 class="game-mode">Game Mode</h1>
-        <div class="timer">Time: 00:00</div>
-        <div id="score" class="scoreboard">Score: 0</div>
-    </header>
+    <nav class="navbar">
+        <img src="./anilogo.gif" class="logo">
+        <a href="">Home</a>
+        <a href="">Games</a>
+        <a href="">Learn</a>
+    </nav>
 
-    <section id="gameplaySection">
-        <h2 id="capitalName">Game Mode</h2>
-        <button id="startButton" class="start-button">
-            <h id="randomise">Start</h>
-        </button>
-        <p id="message"></p>
-    </section>
+    <div class="content">
+        <div class="elements">
+            <div class="game-fact">
+                <h1 class="game-mode">Game Mode</h1>
+                <div class="timer">Time: 00:00</div>
+                <div id="score" class="scoreboard">Score: 0</div>
+            </div>
 
-    <section id="userInputSection">
-        <form>
-            <label for="userInput"> Enter your guess country</label>
-            <input type="text" name="country" id="userInput" placeholder="e.g. UK" required>
-            <input type="submit" value="submit">
-        </form>
-    </section>
+            <section id="gameplaySection">
+                <h2 id="capitalName">Game Mode</h2>
+                <button id="startButton" class="start-button">
+                    <h id="randomise">Start</h>
+                </button>
+                <p id="message"></p>
+            </section>
+
+            <section id="userInputSection">
+                <form>
+                    <label for="userInput"> Enter your guess country</label>
+                    <input type="text" name="country" id="userInput" placeholder="e.g. UK" required>
+                    <input type="submit" value="submit">
+                </form>
+            </section>
+        </div>
+    </div>
 
 </body>
 

@@ -1,48 +1,76 @@
 body {
+    background: linear-gradient(to right, #7b00ff, #e20d74, #02fff2);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-header {
+.content {
+    background-image: url('https://pics.craiyon.com/2023-05-25/91d9db73f1e34e1ea851e2de020834ce.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    padding: 20px;
+    margin: 10px;
+}
+
+.elements {
+    background-color: rgba(251, 251, 251, 0.8);
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10%;
+    height: 800px;
+
+}
+
+nav {
+    display: flex;
+    background: linear-gradient(to right, #15ff00, #585855, #000000);
+    overflow: hidden;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: linear-gradient(to right, #7b00ff, #e20d74, #02fff2);
+    color: rgb(34, 120, 66);
+}
+
+.logo {
+    justify-content: left;
+    max-width: 5%;
+}
+
+
+.game-fact {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
 }
 
-.home-button {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    padding: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #a2c4c9;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
 
-}
 
 #gameplaySection {
     font-size: 24px;
     text-align: center;
     width: 100%;
-    margin-top: 100px;
     color: #187086
 }
 
 .scoreboard {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 20px;
     font-size: 16px;
     padding: 8px;
-    margin: auto;
+    margin: 20px 0;
     background-color: #73a88e;
     color: black;
     font-weight: normal;
@@ -50,13 +78,9 @@ header {
 }
 
 .timer {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 60px;
     font-size: 16px;
     padding: 8px;
-    margin: auto;
+    margin: 10px 0;
     background-color: #73a88e;
     color: black;
     font-weight: normal;
