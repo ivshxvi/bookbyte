@@ -47,16 +47,28 @@ submitButton.addEventListener("submit", async (e) => {
     const userInput = document.getElementById('userInput').value;
     const message = document.querySelector("#message")
     if (userInput === countryData.name) {
-        message.textContent = `You guessed right, this is ${countryData.name}`
-        message.classList.add('flash-green')
         score += 1
         scoreBoard.textContent = `Score: ${score}`
-    } else {
+        getCountry().then((data) => {
+            removePicture()
+            console.log(data.name)
+            capitalName.textContent = data.capital
+            placePicture(data.flag)
+            message.textContent = ""
+        })
+        e.target.userInput.value = ""
+    }
+    else if (countryData.name.includes(userInput) && userInput.length >= 4) {
+        message.textContent = "Nearly there!"
+        message.classList.add('flash-orange')
+    }
+    else {
         message.textContent = "You are wrong!"
         message.classList.add('flash-red')
+        e.target.userInput.value = ""
     }
     setTimeout(() => {
-        message.classList.remove('flash-red', 'flash-green')
+        message.classList.remove('flash-red', 'flash-orange')
     }, 500)
 })
 

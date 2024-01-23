@@ -29,6 +29,7 @@ nav {
     overflow: hidden;
     font-size: 30px;
     font-weight: bold;
+
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -36,8 +37,11 @@ nav a {
     float: left;
     display: block;
     color: white;
-    padding: 14px 16px;
-    text-decoration: none;
+    padding: 15px 15px;
+    margin-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-variant: small-caps;
 }
 
 nav a:hover {
@@ -168,8 +172,8 @@ input[type="submit"]:hover {
     animation: flash-red 0.5s;
 }
 
-.flash-green {
-    animation: flash-green 0.5s;
+.flash-orange {
+    animation: flash-orange 0.5s;
 }
 
 @keyframes flash-red {
@@ -182,9 +186,9 @@ input[type="submit"]:hover {
     }
 }
 
-@keyframes flash-green {
+@keyframes flash-orange {
     0% {
-        background-color: green;
+        background-color: orange;
     }
 
     100% {
