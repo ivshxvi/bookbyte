@@ -3,8 +3,22 @@ const startButton = document.querySelector("#gameplaySection button")
 const submitButton = document.querySelector("#userInputSection")
 const scoreBoard = document.querySelector("#score")
 
-window.addEventListener('beforeunload', function (e) {
-    var confirmationMessage = 'Are you sure you want to leave? Your score will be lost!'
+const myFunction = () => {
+    document.getElementById("myDropdown").classList.toggle("show")
+}
+
+window.onclick = (e) => {
+    if (!e.target.matches('.dropbtn')) {
+        const myDropdown = document.getElementById("myDropdown")
+        if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show')
+        }
+    }
+}
+
+
+window.addEventListener('beforeunload', (e) => {
+    const confirmationMessage = 'Are you sure you want to leave? Your score will be lost!'
     e.returnValue = confirmationMessage || undefined
     return confirmationMessage
 })

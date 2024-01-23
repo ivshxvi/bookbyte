@@ -13,9 +13,18 @@
 <body>
     <nav class="navbar">
         <img src="./anilogo.gif" class="logo">
-        <a href="">Home</a>
-        <a href="">Games</a>
-        <a href="">Learn</a>
+        <a class="nav-item" href="">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">New Game
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <a class="nav-item" href="./learn.html">Learn</a>
     </nav>
 
     <div class="content">
