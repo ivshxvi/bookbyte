@@ -93,13 +93,11 @@ submitButton.addEventListener("submit", async (e) => {
     else if (countryData.name.some(name => name.includes(userInput) && userInput.length >= 4)) {
         message.textContent = "Nearly there!"
         message.classList.add('flash-orange')
-        console.log("else if")
     }
     else {
         message.textContent = "You are wrong!"
         message.classList.add('flash-red')
         e.target.userInput.value = ""
-        console.log(typeof countryData)
     }
     setTimeout(() => {
         message.classList.remove('flash-red', 'flash-orange')
