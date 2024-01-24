@@ -261,6 +261,7 @@ footer {
     align-items: center;
     font-family: 'Arial', sans-serif;
     box-sizing: border-box;
+    font-size: large;
 }
 
 .footer-logo {
