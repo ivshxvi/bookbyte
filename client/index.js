@@ -75,6 +75,8 @@ const onSubmit = async (e) => {
     if (countryData.name.includes(userInput)) {
         score += 1;
         scoreBoard.textContent = `Score: ${score}`;
+        successHistory.push(countryData.name)
+        console.log(successHistory)
         getCountry().then((data) => {
             removePicture()
             console.log(data.name)
@@ -112,6 +114,7 @@ const removePicture = () => {
     }
 };
 
+let timerOn
 startButton.addEventListener('click', (e) => {
     const capitalName = document.querySelector("#capitalName");
     const randomiseTag = document.querySelector("#randomise");
@@ -124,12 +127,11 @@ startButton.addEventListener('click', (e) => {
         placePicture(data.capital_picture);
         message.textContent = "";
         randomiseTag.textContent = "Next";
+        timerOn = 1;
     });
-
-    // Reset the timer and start the countdown
-    timer = 10;
-    updateTimer();
-
-    // Attach the submit event listener
+    if (timerOn != 1) {
+        timer = 150;
+        updateTimer();
+    }
     submitButton.addEventListener("submit", onSubmit);
 });
