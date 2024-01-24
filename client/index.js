@@ -22,9 +22,11 @@ window.onclick = (e) => {
 };
 
 window.addEventListener('beforeunload', (e) => {
-    const confirmationMessage = 'Are you sure you want to leave? Your score will be lost!';
-    e.returnValue = confirmationMessage || undefined;
-    return confirmationMessage;
+    if (timer != 0) {
+        const confirmationMessage = 'Are you sure you want to leave? Your score will be lost!';
+        e.returnValue = confirmationMessage || undefined;
+        return confirmationMessage;
+    }
 });
 
 document.querySelector("#userInputSection").style.display = "none";
@@ -57,7 +59,8 @@ const updateTimer = () => {
         finalScoreElement.style.display = "block"; // Show the final score element
         scoreDisplayElement.textContent = score; // Update the final score display
         submitButton.removeEventListener("submit", onSubmit);
-        console.log("Times Up! Final Score: " + score);
+        alert("Times Up! Final Score: " + score);
+        window.location.href = "./learn.html"
     } else {
         timer--;
         setTimeout(updateTimer, 1000); // Update timer every 1 second
@@ -73,6 +76,7 @@ const onSubmit = async (e) => {
         score += 1;
         scoreBoard.textContent = `Score: ${score}`;
         getCountry().then((data) => {
+            removePicture()
             console.log(data.name)
             capitalName.textContent = data.capital
             placePicture(data.capital_picture)
@@ -101,6 +105,12 @@ const placePicture = (picUrl) => {
     gameplaySection.appendChild(pic);
 };
 
+const removePicture = () => {
+    const pic = document.querySelector(".img");
+    if (pic) {
+        pic.remove();
+    }
+};
 
 startButton.addEventListener('click', (e) => {
     const capitalName = document.querySelector("#capitalName");
@@ -108,6 +118,7 @@ startButton.addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector("#userInputSection").style.display = "block";
     getCountry().then((data) => {
+        removePicture();
         console.log(data.name);
         capitalName.textContent = data.capital;
         placePicture(data.capital_picture);
