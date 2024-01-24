@@ -123,8 +123,10 @@ startButton.addEventListener('click', (e) => {
     const randomiseTag = document.querySelector("#randomise");
     e.preventDefault();
     document.querySelector("#userInputSection").style.display = "block";
-    displayHistory = []
     getCountry().then((data) => {
+        if(displayHistory.length > 1){
+            displayHistory.pop()
+        }
         removePicture();
         console.log(data.name);
         capitalName.textContent = data.capital;
