@@ -1,48 +1,80 @@
 body {
+    background: linear-gradient(to right, #7b00ff, #e20d74, #02fff2);
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    cursor: crosshair;
 }
 
-header {
+.content {
+    background-image: url('https://pics.craiyon.com/2023-05-25/91d9db73f1e34e1ea851e2de020834ce.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    padding: 20px;
+    margin: 10px;
+}
+
+.elements {
+    background-color: rgba(251, 251, 251, 0.8);
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10%;
+    min-height: 800px;
+    border-radius: 10%;
+}
+
+nav {
+    display: flex;
+    background: linear-gradient(to right, #15ff00, #585855, #000000);
+    overflow: hidden;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    padding: 15px 15px;
+    margin-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-variant: small-caps;
+}
+
+nav .nav-item:hover {
+    background: linear-gradient(to right, #7b00ff, #e20d74, #02fff2);
+    border-radius: 30%;
+}
+
+.logo {
+    justify-content: left;
+    max-width: 5%;
+}
+
+
+.game-fact {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
 }
 
-.home-button {
-    position: absolute;
-    left: 15px;
-    top: 15px;
-    padding: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #a2c4c9;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
 
-}
 
 #gameplaySection {
     font-size: 24px;
     text-align: center;
     width: 100%;
-    margin-top: 100px;
     color: #187086
 }
 
 .scoreboard {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 20px;
     font-size: 16px;
     padding: 8px;
-    margin: auto;
+    margin: 20px 0;
     background-color: #73a88e;
     color: black;
     font-weight: normal;
@@ -50,13 +82,9 @@ header {
 }
 
 .timer {
-    display: flex;
-    position: absolute;
-    right: 20px;
-    top: 60px;
     font-size: 16px;
     padding: 8px;
-    margin: auto;
+    margin: 10px 0;
     background-color: #73a88e;
     color: black;
     font-weight: normal;
@@ -144,8 +172,8 @@ input[type="submit"]:hover {
     animation: flash-red 0.5s;
 }
 
-.flash-green {
-    animation: flash-green 0.5s;
+.flash-orange {
+    animation: flash-orange 0.5s;
 }
 
 @keyframes flash-red {
@@ -158,12 +186,69 @@ input[type="submit"]:hover {
     }
 }
 
-@keyframes flash-green {
+@keyframes flash-orange {
     0% {
-        background-color: green;
+        background-color: orange;
     }
 
     100% {
         background-color: inherit;
     }
+}
+
+.dropbtn:hover {
+    background: linear-gradient(to right, #7b00ff, #e20d74, #02fff2);
+    border-radius: 50%;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    float: left;
+    display: block;
+    color: white;
+    padding: 15px 15px;
+    margin-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.dropdown-content {
+    margin-top: 10px;
+    display: none;
+    position: fixed;
+    background-color: #039ff3;
+    width: 250px;
+    border-radius: 10%;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: start;
+    border-radius: 0%;
+}
+
+.dropdown-content a:hover {
+    background-color: #2bc214;
+    border-radius: 20%;
+    width: 35%;
+}
+
+.show {
+    display: block;
 }
