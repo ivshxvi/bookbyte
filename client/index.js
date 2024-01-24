@@ -45,6 +45,7 @@ const getCountry = async () => {
         do {
             const response = await fetch('http://localhost:3000/random');
             data = await response.json();
+            console.log(successHistory.some(entry => entry === data.name))
         } while (successHistory.some(entry => entry === data.name));
 
         countryData = data;
