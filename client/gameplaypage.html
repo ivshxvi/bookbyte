@@ -11,30 +11,49 @@
 </head>
 
 <body>
-    <header>
-        <button onclick="goHome()">Home</button>
-        <h1 class="game-mode">Game Mode</h1>
 
-        <div id = "timer" class="timer">02:00</div>
-        <div id = "score" class="scoreboard">Score: 0</div>
+    <nav class="navbar">
+        <img src="./anilogo.gif" class="logo">
+        <a class="nav-item" href="">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">New Game
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <a class="nav-item" href="./learn.html">Learn</a>
+    </nav>
 
-    </header>
 
-    <section id="gameplaySection">
-        <h2 id="capitalName">Game Mode</h2>
-        <button id="startButton" class="start-button">
-            <h id="randomise">Start</h>
-        </button>
-        <p id="message"></p>
-    </section>
+    <div class="content">
+        <div class="elements">
+            <div class="game-fact">
+                <h1 class="game-mode">Game Mode</h1>
+                <div class="timer">Time: 00:00</div>
+                <div id="score" class="scoreboard">Score: 0</div>
+            </div>
 
-    <section id="userInputSection">
-        <form>
-            <label for="userInput"> Enter your guess country</label>
-            <input type="text" name="country" id="userInput" placeholder="e.g. UK" required>
-            <input type="submit" value="submit">
-        </form>
-    </section>
+            <section id="gameplaySection">
+                <h2 id="capitalName">Game Mode</h2>
+                <button id="startButton" class="start-button">
+                    <h id="randomise">Start</h>
+                </button>
+                <p id="message"></p>
+            </section>
+
+            <section id="userInputSection">
+                <form>
+                    <label for="userInput"> Enter your guess country</label>
+                    <input type="text" name="country" id="userInput" placeholder="e.g. UK" required>
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
+        </div>
+    </div>
 
 </body>
 
