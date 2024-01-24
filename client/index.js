@@ -90,29 +90,16 @@ submitButton.addEventListener("submit", async (e) => {
         })
         e.target.userInput.value = ""
     }
-    else if (countryData.name.includes(userInput) && userInput.length >= 4) {
+    else if (countryData.name.some(name => name.includes(userInput) && userInput.length >= 4)) {
         message.textContent = "Nearly there!"
         message.classList.add('flash-orange')
+        console.log("else if")
     }
     else {
-//
-
-//     if (countryData.name.includes(userInput)){
-//         message.textContent = `You guessed right, this is ${countryData.name}`
-//         message.classList.add('flash-green')
-//         score += 1
-//         scoreBoard.textContent = `Score: ${score}`
-//         successHistory.push(countryData)
-//         console.log(successHistory)
-
-//     } else {
-// 
         message.textContent = "You are wrong!"
-
         message.classList.add('flash-red')
-
         e.target.userInput.value = ""
-
+        console.log(typeof countryData)
     }
     setTimeout(() => {
         message.classList.remove('flash-red', 'flash-orange')
