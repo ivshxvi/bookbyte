@@ -26,9 +26,11 @@ window.onclick = (e) => {
 };
 
 window.addEventListener('beforeunload', (e) => {
-    const confirmationMessage = 'Are you sure you want to leave? Your score will be lost!';
-    e.returnValue = confirmationMessage || undefined;
-    return confirmationMessage;
+    if (timer != 0) {
+        const confirmationMessage = 'Are you sure you want to leave? Your score will be lost!';
+        e.returnValue = confirmationMessage || undefined;
+        return confirmationMessage;
+    }
 });
 
 document.querySelector("#userInputSection").style.display = "none";
@@ -43,7 +45,7 @@ const getCountry = async () => {
         do {
             const response = await fetch('http://localhost:3000/random');
             data = await response.json();
-        } while (successHistory.some(entry => entry.name === data.name));
+        } while (successHistory.some(entry => entry === data.name));
 
         countryData = data;
 
@@ -61,8 +63,8 @@ const updateTimer = () => {
         finalScoreElement.style.display = "block"; // Show the final score element
         scoreDisplayElement.textContent = score; // Update the final score display
         submitButton.removeEventListener("submit", onSubmit);
-        console.log("Times Up! Final Score: " + score);
-        console.log(`You guessed: ${countUnique(successHistory)} out of 27`)
+        alert("Times Up! Final Score: " + score);
+        window.location.href = "./learn.html"
     } else {
         timer--;
         setTimeout(updateTimer, 1000); // Update timer every 1 second
@@ -106,7 +108,6 @@ const placePicture = (picUrl) => {
     const pic = document.createElement("img");
     pic.src = picUrl;
     pic.classList.add("img");
-    pic.addEventListener("click", (f) => f.target.remove(), { once: true });
     gameplaySection.appendChild(pic);
 };
 
