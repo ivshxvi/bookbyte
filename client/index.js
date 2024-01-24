@@ -73,8 +73,6 @@ const onSubmit = async (e) => {
         score += 1;
         scoreBoard.textContent = `Score: ${score}`;
         getCountry().then((data) => {
-
-            removePicture()
             console.log(data.name)
             capitalName.textContent = data.capital
             placePicture(data.capital_picture)
@@ -100,16 +98,9 @@ const placePicture = (picUrl) => {
     const pic = document.createElement("img");
     pic.src = picUrl;
     pic.classList.add("img");
-    pic.addEventListener("click", (f) => f.target.remove(), { once: true });
     gameplaySection.appendChild(pic);
 };
 
-const removePicture = () => {
-    const pic = document.querySelector(".img");
-    if (pic) {
-        pic.remove();
-    }
-};
 
 startButton.addEventListener('click', (e) => {
     const capitalName = document.querySelector("#capitalName");
@@ -117,7 +108,6 @@ startButton.addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector("#userInputSection").style.display = "block";
     getCountry().then((data) => {
-        removePicture();
         console.log(data.name);
         capitalName.textContent = data.capital;
         placePicture(data.capital_picture);
