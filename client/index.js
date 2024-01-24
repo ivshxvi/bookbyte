@@ -8,6 +8,10 @@ const timesUpMessage = timesUpSection.querySelector("#timesUpMessage");
 const finalScoreElement = timesUpSection.querySelector("#finalScore");
 const scoreDisplayElement = timesUpSection.querySelector("#scoreDisplay");
 
+const countUnique = (iter) => {
+    return new Set(iter).size;
+}
+
 const myFunction = () => {
     document.getElementById("myDropdown").classList.toggle("show");
 };
@@ -58,6 +62,7 @@ const updateTimer = () => {
         scoreDisplayElement.textContent = score; // Update the final score display
         submitButton.removeEventListener("submit", onSubmit);
         console.log("Times Up! Final Score: " + score);
+        console.log(`You guessed: ${countUnique(successHistory)} out of 27`)
     } else {
         timer--;
         setTimeout(updateTimer, 1000); // Update timer every 1 second
@@ -72,8 +77,9 @@ const onSubmit = async (e) => {
     if (countryData.name.includes(userInput)) {
         score += 1;
         scoreBoard.textContent = `Score: ${score}`;
+        successHistory.push(countryData.name)
+        console.log(successHistory)
         getCountry().then((data) => {
-
             removePicture()
             console.log(data.name)
             capitalName.textContent = data.capital
@@ -126,7 +132,7 @@ startButton.addEventListener('click', (e) => {
     });
 
     // Reset the timer and start the countdown
-    timer = 10;
+    timer = 100;
     updateTimer();
 
     // Attach the submit event listener
