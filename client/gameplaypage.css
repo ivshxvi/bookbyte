@@ -21,8 +21,8 @@ body {
     margin-left: 12%;
     margin-right: 12%;
     margin-top: 0%;
-    padding: 0%;
-    min-height: 880px;
+    padding: 10px;
+    min-height: 950px;
     border-radius: 20px;
     position: relative;
     box-sizing: border-box;
@@ -84,27 +84,27 @@ nav .nav-item:hover {
 
 .scoreboard {
     font-size: 20px;
-    padding: 8px;
+    padding: 10px 0 10px 20px;
     background-color: #ead4bc;
     color: black;
     font-weight: normal;
     width: 7%;
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 20px;
+    left: 20px;
     border-radius: 5px;
 }
 
 .timer {
     font-size: 20px;
-    padding: 8px;
+    padding: 10px 12px 10px 20px;
     background-color: #ead4bc;
     color: black;
     font-weight: normal;
     width: 10%;
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     border-radius: 5px;
 }
 
