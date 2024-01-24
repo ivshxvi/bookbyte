@@ -73,20 +73,23 @@ const onSubmit = async (e) => {
         score += 1;
         scoreBoard.textContent = `Score: ${score}`;
         getCountry().then((data) => {
-            removePicture();
-            console.log(data.name);
-            capitalName.textContent = data.capital;
-            placePicture(data.flag);
-            message.textContent = "";
-        });
-        e.target.userInput.value = "";
-    } else if (countryData.name.includes(userInput) && userInput.length >= 4) {
-        message.textContent = "Nearly there!";
-        message.classList.add('flash-orange');
-    } else {
-        message.textContent = "You are wrong!";
-        message.classList.add('flash-red');
-        e.target.userInput.value = "";
+
+            removePicture()
+            console.log(data.name)
+            capitalName.textContent = data.capital
+            placePicture(data.capital_picture)
+            message.textContent = ""
+        })
+        e.target.userInput.value = ""
+    }
+    else if (countryData.name.some(name => name.includes(userInput) && userInput.length >= 4)) {
+        message.textContent = "Nearly there!"
+        message.classList.add('flash-orange')
+    }
+    else {
+        message.textContent = "You are wrong!"
+        message.classList.add('flash-red')
+        e.target.userInput.value = ""
     }
     setTimeout(() => {
         message.classList.remove('flash-red', 'flash-orange');
