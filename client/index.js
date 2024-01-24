@@ -118,6 +118,7 @@ const removePicture = () => {
     }
 };
 
+let timerOn
 startButton.addEventListener('click', (e) => {
     const capitalName = document.querySelector("#capitalName");
     const randomiseTag = document.querySelector("#randomise");
@@ -130,12 +131,12 @@ startButton.addEventListener('click', (e) => {
         placePicture(data.capital_picture);
         message.textContent = "";
         randomiseTag.textContent = "Next";
+        timerOn = 1;
     });
+    if (timerOn != 1) {
+        timer = 150;
+        updateTimer();
+    }
 
-    // Reset the timer and start the countdown
-    timer = 100;
-    updateTimer();
-
-    // Attach the submit event listener
     submitButton.addEventListener("submit", onSubmit);
 });
