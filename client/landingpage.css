@@ -1,9 +1,25 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Mooli', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e9ebe4;
+    /* background-color: #e9ebe4; */
+    background-image: url('https://images.unsplash.com/photo-1500964757637-c85e8a162699?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YmVhdXRpZnVsJTIwbGFuZHNjYXBlfGVufDB8fDB8fHww');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(233, 235, 228, 0.7); 
+    z-index: -1; 
+}
+
 
 header {
     text-align: center;
@@ -37,7 +53,8 @@ header {
 }
 
 .game-button {
-    background-color: #9d73a8d8;
+    background-color: #7C9D96;
+    font-family: 'Mooli', sans-serif;
     width: 13%;
     color: white;
     padding: 25px 5px;
