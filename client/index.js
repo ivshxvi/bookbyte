@@ -37,19 +37,19 @@ document.querySelector("#userInputSection").style.display = "none";
 
 let countryData;
 let score = 0;
-let displayHistory = [];
+let successHistory = [];
 
 const getCountry = async () => {
     try {
         let data;
         do {
+            
             const response = await fetch('http://localhost:3000/random');
             data = await response.json();
-        } while (displayHistory.includes(data.capital));
-
+        } while (successHistory.some(entry => entry === data.name));
 
         countryData = data;
-        displayHistory.push(data.capital)
+
         return data;
     } catch (e) {
         console.error(e);
@@ -80,6 +80,8 @@ const onSubmit = async (e) => {
     if (countryData.name.includes(userInput)) {
         score += 1;
         scoreBoard.textContent = `Score: ${score}`;
+        successHistory.push(countryData.name)
+        console.log(successHistory)
         getCountry().then((data) => {
             removePicture()
             console.log(data.name)
@@ -123,7 +125,6 @@ startButton.addEventListener('click', (e) => {
     const randomiseTag = document.querySelector("#randomise");
     e.preventDefault();
     document.querySelector("#userInputSection").style.display = "block";
-    displayHistory = []
     getCountry().then((data) => {
         removePicture();
         console.log(data.name);
