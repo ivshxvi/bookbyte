@@ -37,6 +37,7 @@ const displayCards = (data) => {
             <p>Phone Code: ${obj.phone_code}</p>
             <p>Currency: ${obj.currency_name} (${obj.currency_symbol})</p>
             <p>Language: ${obj.language}</p>
+            <p>Info: ${obj.info}</p>
         `
         cardContainer.appendChild(card)
     })
