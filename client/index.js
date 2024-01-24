@@ -85,7 +85,7 @@ submitButton.addEventListener("submit", async (e) => {
             removePicture()
             console.log(data.name)
             capitalName.textContent = data.capital
-            placePicture(data.flag)
+            placePicture(data.capital_picture)
             message.textContent = ""
         })
         e.target.userInput.value = ""
