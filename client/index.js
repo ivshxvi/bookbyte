@@ -47,6 +47,7 @@ const getCountry = async () => {
             data = await response.json();
         } while (displayHistory.includes(data.capital));
 
+
         countryData = data;
         displayHistory.push(data.capital)
         return data;
