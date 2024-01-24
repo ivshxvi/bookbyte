@@ -45,11 +45,11 @@ const getCountry = async () => {
         do {
             const response = await fetch('http://localhost:3000/random');
             data = await response.json();
-        } while (displayHistory.includes(data.capital));
+        } while (displayHistory.includes(data.name));
 
 
         countryData = data;
-        displayHistory.push(data.capital)
+        displayHistory.push(data.name)
         return data;
     } catch (e) {
         console.error(e);
@@ -130,7 +130,7 @@ startButton.addEventListener('click', (e) => {
         removePicture();
         console.log(data.name);
         capitalName.textContent = data.capital;
-        placePicture(data.capital_picture);
+        placePicture(data.flag);
         message.textContent = "";
         randomiseTag.textContent = "Next";
         timerOn = 1;
