@@ -1,7 +1,10 @@
+
+
 const displayForm = document.querySelector("#displaySection")
 const startButton = document.querySelector("#gameplaySection button")
 const submitButton = document.querySelector("#userInputSection")
 const scoreBoard = document.querySelector("#score")
+
 
 const myFunction = () => {
     document.getElementById("myDropdown").classList.toggle("show")
@@ -19,6 +22,7 @@ window.onclick = (e) => {
 
 window.addEventListener('beforeunload', (e) => {
     const confirmationMessage = 'Are you sure you want to leave? Your score will be lost!'
+
     e.returnValue = confirmationMessage || undefined
     return confirmationMessage
 })
@@ -26,7 +30,9 @@ window.addEventListener('beforeunload', (e) => {
 document.querySelector("#userInputSection").style.display = "none"
 
 
+
 let countryData
+
 
 
 const getCountry = async () => {
@@ -38,6 +44,10 @@ const getCountry = async () => {
     } catch (e) { console.error(e) }
 }
 
+
+
+
+
 startButton.addEventListener('click', (e) => {
     const capitalName = document.querySelector("#capitalName")
     const randomiseTag = document.querySelector("#randomise")
@@ -47,7 +57,7 @@ startButton.addEventListener('click', (e) => {
         removePicture()
         console.log(data.name)
         capitalName.textContent = data.capital
-        placePicture(data.flag)
+        placePicture(data.capital_picture)
         message.textContent = ""
         randomiseTag.textContent = "Next"
     })
@@ -55,11 +65,13 @@ startButton.addEventListener('click', (e) => {
 })
 
 let score = 0
+let successHistory = []
 
 submitButton.addEventListener("submit", async (e) => {
     e.preventDefault()
     const userInput = document.getElementById('userInput').value;
     const message = document.querySelector("#message")
+
     if (userInput === countryData.name) {
         score += 1
         scoreBoard.textContent = `Score: ${score}`
@@ -77,9 +89,24 @@ submitButton.addEventListener("submit", async (e) => {
         message.classList.add('flash-orange')
     }
     else {
+//
+
+//     if (countryData.name.includes(userInput)){
+//         message.textContent = `You guessed right, this is ${countryData.name}`
+//         message.classList.add('flash-green')
+//         score += 1
+//         scoreBoard.textContent = `Score: ${score}`
+//         successHistory.push(countryData)
+//         console.log(successHistory)
+
+//     } else {
+// 
         message.textContent = "You are wrong!"
+
         message.classList.add('flash-red')
+
         e.target.userInput.value = ""
+
     }
     setTimeout(() => {
         message.classList.remove('flash-red', 'flash-orange')
