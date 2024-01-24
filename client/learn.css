@@ -1,0 +1,139 @@
+body {
+    background: linear-gradient(to right, #7b00ff, #e20d74, #02fff2);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    cursor: crosshair;
+    text-align: center;
+}
+
+.content {
+    background-image: url('https://images.adsttc.com/media/images/606b/0d1b/f91c/8184/bc00/000c/newsletter/159177570_785370545518351_1448974923367387410_n_-_Copia.jpg?1617628435');
+    background-size: auto;
+    background-position: center;
+    background-repeat: repeat;
+    padding: 20px;
+    margin: 10px;
+    background-position-x: center;
+}
+
+.elements {
+    background-color: rgba(216, 0, 0, 0.8);
+    padding: 10%;
+    min-height: 800px;
+    border-radius: 10px;
+}
+
+nav {
+    display: flex;
+    background: linear-gradient(to right, #15ff00, #585855, #000000);
+    overflow: hidden;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-radius: 0px 0px 15px 15px;
+    border-style: double;
+    border-color: greenyellow;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    padding: 15px 15px;
+    margin-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-variant: small-caps;
+}
+
+nav .nav-item:hover {
+    background: linear-gradient(to right, #7b00ff, #e20d74, #02fff2);
+    border-radius: 30%;
+}
+
+.logo {
+    justify-content: left;
+    max-width: 5%;
+}
+
+.dropbtn:hover {
+    background: linear-gradient(to right, #7b00ff, #e20d74, #02fff2);
+    border-radius: 50%;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    float: left;
+    display: block;
+    color: white;
+    padding: 15px 15px;
+    margin-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.dropdown-content {
+    margin-top: 10px;
+    display: none;
+    position: fixed;
+    background-color: #039ff3;
+    width: 250px;
+    border-radius: 10%;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: start;
+    border-radius: 0%;
+}
+
+.dropdown-content a:hover {
+    background-color: #2bc214;
+    border-radius: 20%;
+    width: 35%;
+}
+
+.show {
+    display: block;
+}
+
+.card {
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 100px 0;
+    width: 100%;
+    height: 400px;
+    display: block;
+    background-size: cover;
+    color: rgb(217, 255, 0);
+}
+
+.card h3,
+.card p {
+    margin: 0;
+}
+
+.card img {
+    max-width: 100%;
+    height: 100px;
+    max-height: 100px;
+}

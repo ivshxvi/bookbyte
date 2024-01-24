@@ -8,33 +8,65 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='gameplaypage.css'>
     <script src="index.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <button onclick="goHome()">Home</button>
-        <h1 class="game-mode">Game Mode</h1>
 
-        <div id = "timer" class="timer">02:00</div>
-        <div id = "score" class="scoreboard">Score: 0</div>
+    <nav class="navbar">
+        <!-- <img src="./anilogo.gif" class="logo"> -->
+        <a class="nav-item" href="">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn" onclick="myFunction()">New Game
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </div>
+        <a class="nav-item" href="./learn.html">Learn</a>
+    </nav>
 
-    </header>
 
-    <section id="gameplaySection">
-        <h2 id="capitalName">Game Mode</h2>
-        <button id="startButton" class="start-button">
-            <h id="randomise">Start</h>
-        </button>
-        <p id="message"></p>
-    </section>
+    <div class="content">
+        <div class="elements">
+            <div class="game-fact">
 
-    <section id="userInputSection">
-        <form>
-            <label for="userInput"> Enter your guess country</label>
-            <input type="text" name="country" id="userInput" placeholder="e.g. UK" required>
-            <input type="submit" value="submit">
-        </form>
-    </section>
+                <h1 class="game-mode">Guess the Country by its Capital</h1>
+                <div id="timer" class="timer">Time: 00:00</div>
+
+                <div id="score" class="scoreboard">Score: 0</div>
+            </div>
+
+
+            <section id="timesUp">
+                <div id="timesUpMessage" style="display: none;">Times Up</div>
+                <div id="finalScore" style="display: none;">Final Score: <span id="scoreDisplay">0</span></div>
+            </section>
+
+
+            <section id="gameplaySection">
+                <h2 id="capitalName">Capital City</h2>
+                <button id="startButton" class="start-button">
+                    <h id="randomise">Start</h>
+                </button>
+                <p id="message"></p>
+            </section>
+
+            <section id="userInputSection">
+                <form>
+                    <label for="userInput"> Enter your guess country</label>
+                    <input type="text" name="country" id="userInput" style="text-transform: capitalize;"
+                        placeholder="e.g. UK" required>
+                    <input type="submit" value="Submit">
+                </form>
+            </section>
+        </div>
+    </div>
 
 </body>
 
