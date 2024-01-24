@@ -8,6 +8,10 @@ const timesUpMessage = timesUpSection.querySelector("#timesUpMessage");
 const finalScoreElement = timesUpSection.querySelector("#finalScore");
 const scoreDisplayElement = timesUpSection.querySelector("#scoreDisplay");
 
+const countUnique = (iter) => {
+    return new Set(iter).size;
+}
+
 const myFunction = () => {
     document.getElementById("myDropdown").classList.toggle("show");
 };
@@ -41,7 +45,7 @@ const getCountry = async () => {
         do {
             const response = await fetch('http://localhost:3000/random');
             data = await response.json();
-        } while (successHistory.some(entry => entry.name === data.name));
+        } while (successHistory.some(entry => entry === data.name));
 
         countryData = data;
 
@@ -133,5 +137,6 @@ startButton.addEventListener('click', (e) => {
         timer = 150;
         updateTimer();
     }
+
     submitButton.addEventListener("submit", onSubmit);
 });
