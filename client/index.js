@@ -78,7 +78,7 @@ submitButton.addEventListener("submit", async (e) => {
     const userInput = document.getElementById('userInput').value;
     const message = document.querySelector("#message")
 
-    if (userInput === countryData.name) {
+    if (countryData.name.includes(userInput)) {
         score += 1
         scoreBoard.textContent = `Score: ${score}`
         getCountry().then((data) => {
