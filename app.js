@@ -24,6 +24,8 @@ app.get("/random", (req,res) => {
     res.send(geo[randIdx]);
 })
 
+
+
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
 })

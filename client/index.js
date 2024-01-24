@@ -20,11 +20,17 @@ let countryData
 
 
 
+
 const getCountry = async () => {
     try {
-        const response = await fetch('http://localhost:3000/random')
-        const data = await response.json()
+        let data
+        do {
+            const response = await fetch('http://localhost:3000/random')
+            data = await response.json()
+        } while (successHistory.some(entry => entry.name === data.name))
+
         countryData = data
+
         return data
     } catch (e) { console.error(e) }
 }
