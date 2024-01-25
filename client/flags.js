@@ -40,16 +40,20 @@ let score = 0;
 let displayHistory = [];
 
 const getCountry = async () => {
+    if (score === 27) {
+        alert("MAX SCORE, well done!")
+        window.location.href = "./learn.html"
+    }
     try {
         let data;
         do {
             const response = await fetch('http://localhost:3000/random');
             data = await response.json();
-        } while (displayHistory.includes(data.name));
+        } while (displayHistory.includes(data.capital));
 
 
         countryData = data;
-        displayHistory.push(data.name)
+        displayHistory.push(data.capital)
         return data;
     } catch (e) {
         console.error(e);
@@ -124,7 +128,7 @@ startButton.addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector("#userInputSection").style.display = "block";
     getCountry().then((data) => {
-        if(displayHistory.length > 1){
+        if (displayHistory.length > 1) {
             displayHistory.pop()
         }
         removePicture();
@@ -139,6 +143,8 @@ startButton.addEventListener('click', (e) => {
         timer = 150;
         updateTimer();
     }
-
     submitButton.addEventListener("submit", onSubmit);
 });
+
+
+
