@@ -87,7 +87,7 @@ const onSubmit = async (e) => {
         getCountry().then((data) => {
             removePicture()
             console.log(data.name)
-            capitalName.textContent = data.capital
+            // capitalName.textContent = data.capital
             placeCode(data.phone_code)
             message.textContent = ""
         })
@@ -123,7 +123,7 @@ const removePicture = () => {
 
 let timerOn
 startButton.addEventListener('click', (e) => {
-    const capitalName = document.querySelector("#capitalName");
+    // const capitalName = document.querySelector("#capitalName");
     const randomiseTag = document.querySelector("#randomise");
     e.preventDefault();
     document.querySelector("#userInputSection").style.display = "block";
@@ -133,7 +133,7 @@ startButton.addEventListener('click', (e) => {
         }
         removePicture();
         console.log(data.name);
-        capitalName.textContent = data.capital;
+        // capitalName.textContent = data.capital;
         placeCode(data.phone_code);
         message.textContent = "";
         randomiseTag.textContent = "Next";
