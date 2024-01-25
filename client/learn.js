@@ -29,16 +29,30 @@ const displayCards = (data) => {
     data.forEach(obj => {
         const card = document.createElement('div')
         card.className = 'card'
-        card.style.backgroundImage = `url('${obj.capital_picture}')`
         card.innerHTML = `
-            <h1>${obj.name}</h1>
-            <p>Capital: ${obj.capital}</p>
-            <p><img src="${obj.flag}" alt="${obj.name} Flag"></p>
-            <p>Phone Code: ${obj.phone_code}</p>
-            <p>Currency: ${obj.currency_name} (${obj.currency_symbol})</p>
-            <p>Language: ${obj.language}</p>
-            <p>Info: ${obj.info}</p>
+            <div class="top-section">
+                <h1 class="card-title">${obj.name}</h1>
+            </div>
+            <div class="middle-section">
+                <div class="image-box left">
+                    <img class="flag" src="${obj.flag}" alt="Flag">
+                </div>
+                <div class="info-box">
+                    <p class="capital">Capital: ${obj.capital}</p>
+                    <p class="phone-code">Phone Code: ${obj.phone_code}</p>
+                    <p class="currency">Currency: ${obj.currency_name} (${obj.currency_symbol})</p>
+                    <p class="language">Language: ${obj.language}</p>
+                </div>
+                <div class="image-box right">
+                    <img class="capital-photo" src="${obj.capital_picture}" alt="Capital Photo">
+                </div>
+            </div>
+            <div class="bottom-section">
+                <p class="info">${obj.info}</p>
+            </div>
         `
         cardContainer.appendChild(card)
     })
 }
+
+
