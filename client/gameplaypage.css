@@ -35,6 +35,8 @@ nav {
     font-size: 20px;
     font-weight: bold;
     font-family: 'Mooli', sans-serif;
+    align-items: center;
+    margin: 0 auto;
 
 }
 
@@ -58,7 +60,11 @@ nav a,
 nav .nav-item:hover {
     background-color: #25252991;
     border-radius: 10px;
+}
 
+.logo {
+    height: 100px;
+    display: block;
 }
 
 
@@ -247,7 +253,7 @@ nav .dropbtn:hover {
     text-align: center;
     border-radius: 0%;
 
-    font-size: 16px; 
+    font-size: 16px;
 
 }
 
