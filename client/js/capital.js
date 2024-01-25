@@ -83,12 +83,16 @@ const onSubmit = async (e) => {
     if (countryData.name.includes(userInput)) {
         score += 1
         scoreBoard.textContent = `Score: ${score}`
+        scoreBoard.classList.add('spin')
+        setTimeout(() => {
+            scoreBoard.classList.remove('spin')
+        }, 500)
         getCountry().then((data) => {
             removePicture()
-            console.log(data.name)
             capitalName.textContent = data.capital
             placePicture(data.capital_picture)
             message.textContent = ""
+
         })
         e.target.userInput.value = ""
     }
@@ -131,7 +135,6 @@ startButton.addEventListener('click', (e) => {
             displayHistory.pop()
         }
         removePicture()
-        console.log(data.name)
         capitalName.textContent = data.capital
         placePicture(data.capital_picture)
         message.textContent = ""
