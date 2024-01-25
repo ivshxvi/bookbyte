@@ -87,7 +87,7 @@ const onSubmit = async (e) => {
         getCountry().then((data) => {
             removePicture()
             console.log(data.name)
-            capitalName.textContent = data.capital
+            // capitalName.textContent = data.capital
             placePicture(data.flag)
             message.textContent = ""
         })
@@ -133,7 +133,7 @@ startButton.addEventListener('click', (e) => {
         }
         removePicture();
         console.log(data.name);
-        capitalName.textContent = data.capital;
+        // capitalName.textContent = data.capital;
         placePicture(data.flag);
         message.textContent = "";
         randomiseTag.textContent = "Next";
