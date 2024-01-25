@@ -14,6 +14,7 @@ body {
     margin: 0px;
     min-height: 100vh;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .elements {
@@ -242,6 +243,7 @@ nav .dropbtn:hover {
     background-color: #7C9D96;
     width: 120px;
     border-radius: 10px;
+    z-index: 9;
 }
 
 .dropdown-content a {
