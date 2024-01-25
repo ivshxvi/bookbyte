@@ -1,5 +1,4 @@
 body {
-    /* background: linear-gradient(to right, #ba46088e, #ead4bc); */
     font-family: 'Mooli', sans-serif;
     margin: 0;
     padding: 0;
@@ -17,7 +16,7 @@ body {
 }
 
 .elements {
-    background-color: rgba(255, 255, 255, 0.849);
+
     margin-left: 12%;
     margin-right: 12%;
     margin-top: 0%;
@@ -163,7 +162,8 @@ footer {
 .card {
     display: flex;
     flex-direction: column;
-    width: 1800px;
+    width: auto;
+    height: 1000px;
     border: 1px solid #000000;
     margin: 10px;
     z-index: 0;
@@ -192,7 +192,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
+    height: 200px;
     font-weight: 900;
     color: 187086(0, 0, 0);
     font-family: cursive;
@@ -257,8 +257,15 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.8);
-    margin-top: 20px;
     font-weight: 600;
     border-radius: 10px;
-    margin: 10px;
+    margin: 100px;
+    font-size: larger;
+}
+
+.comp-container {
+    text-align: center;
+    max-height: 200px;
+    max-width: 200px;
+    margin: auto;
 }
