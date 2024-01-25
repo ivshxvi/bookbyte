@@ -1,3 +1,10 @@
+.custom-navbar a:focus,
+.custom-navbar a:active,
+.dropdown .dropbtn:focus,
+.dropdown .dropbtn:active {
+    outline: none;
+}
+
 .custom-navbar {
     display: flex;
     background: linear-gradient(to right, #ba46086b, #ead4bca9, #e7ddd2a9);
@@ -27,6 +34,8 @@
 .custom-navbar .nav-item:hover {
     background-color: #25252991;
     border-radius: 10px;
+    color: white;
+    text-decoration: none;
 }
 
 .custom-navbar .dropbtn:hover {
@@ -39,7 +48,7 @@
     margin-left: 0px;
 }
 
-.custom-navbar .dropdown .dropbtn {
+.dropdown .dropbtn {
     cursor: pointer;
     border: none;
     background-color: inherit;
@@ -70,6 +79,7 @@
 
 .custom-navbar .dropdown-content a:hover {
     background-color: #ffffff;
+    color: black;
     border-radius: 10px;
     width: 85%;
     text-decoration: none;
