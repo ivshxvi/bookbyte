@@ -1,43 +1,43 @@
-const displayForm = document.querySelector("#displaySection");
-const startButton = document.querySelector("#gameplaySection button");
-const submitButton = document.querySelector("#userInputSection");
-const scoreBoard = document.querySelector("#score");
-const timerElement = document.querySelector("#timer");
-const timesUpSection = document.querySelector("#timesUp");
-const timesUpMessage = timesUpSection.querySelector("#timesUpMessage");
-const finalScoreElement = timesUpSection.querySelector("#finalScore");
-const scoreDisplayElement = timesUpSection.querySelector("#scoreDisplay");
+const displayForm = document.querySelector("#displaySection")
+const startButton = document.querySelector("#gameplaySection button")
+const submitButton = document.querySelector("#userInputSection")
+const scoreBoard = document.querySelector("#score")
+const timerElement = document.querySelector("#timer")
+const timesUpSection = document.querySelector("#timesUp")
+const timesUpMessage = timesUpSection.querySelector("#timesUpMessage")
+const finalScoreElement = timesUpSection.querySelector("#finalScore")
+const scoreDisplayElement = timesUpSection.querySelector("#scoreDisplay")
 
 const countUnique = (iter) => {
-    return new Set(iter).size;
+    return new Set(iter).size
 }
 
 const myFunction = () => {
-    document.getElementById("myDropdown").classList.toggle("show");
-};
+    document.getElementById("myDropdown").classList.toggle("show")
+}
 
 window.onclick = (e) => {
     if (!e.target.matches('.dropbtn')) {
-        const myDropdown = document.getElementById("myDropdown");
+        const myDropdown = document.getElementById("myDropdown")
         if (myDropdown.classList.contains('show')) {
-            myDropdown.classList.remove('show');
+            myDropdown.classList.remove('show')
         }
     }
-};
+}
 
 window.addEventListener('beforeunload', (e) => {
     if (timer != 0) {
-        const confirmationMessage = 'Are you sure you want to leave? Your score will be lost!';
-        e.returnValue = confirmationMessage || undefined;
-        return confirmationMessage;
+        const confirmationMessage = 'Are you sure you want to leave? Your score will be lost!'
+        e.returnValue = confirmationMessage || undefined
+        return confirmationMessage
     }
-});
+})
 
-document.querySelector("#userInputSection").style.display = "none";
+document.querySelector("#userInputSection").style.display = "none"
 
-let countryData;
-let score = 0;
-let displayHistory = [];
+let countryData
+let score = 0
+let displayHistory = []
 
 const getCountry = async () => {
     if (score === 27) {
@@ -47,47 +47,45 @@ const getCountry = async () => {
     try {
         let data;
         do {
-            const response = await fetch('https://ivans-bookbyte-api.onrender.com/random');
-            data = await response.json();
-        } while (displayHistory.includes(data.capital));
+            const response = await fetch('https://ivans-bookbyte-api.onrender.com/random')
+            data = await response.json()
+        } while (displayHistory.includes(data.capital))
 
 
-        countryData = data;
+        countryData = data
         displayHistory.push(data.capital)
-        return data;
+        return data
     } catch (e) {
-        console.error(e);
+        console.error(e)
     }
-};
+}
 
-// Function to update and display the timer
 const updateTimer = () => {
-    timerElement.textContent = `Time Left: ${timer}`;
+    timerElement.textContent = `Time Left: ${timer}`
     if (timer === 0) {
-        timesUpSection.style.display = "block"; // Show the entire section
-        finalScoreElement.style.display = "block"; // Show the final score element
-        scoreDisplayElement.textContent = score; // Update the final score display
-        submitButton.removeEventListener("submit", onSubmit);
-        alert("Times Up! Final Score: " + score);
+        timesUpSection.style.display = "block"
+        finalScoreElement.style.display = "block"
+        scoreDisplayElement.textContent = score
+        submitButton.removeEventListener("submit", onSubmit)
+        alert("Times Up! Final Score: " + score)
         window.location.href = "./learn.html"
     } else {
-        timer--;
-        setTimeout(updateTimer, 1000); // Update timer every 1 second
+        timer--
+        setTimeout(updateTimer, 1000)
     }
-};
+}
 
 const onSubmit = async (e) => {
-    e.preventDefault();
-    const userInput = document.getElementById('userInput').value;
-    const message = document.querySelector("#message");
+    e.preventDefault()
+    const userInput = document.getElementById('userInput').value
+    const message = document.querySelector("#message")
 
     if (countryData.name.includes(userInput)) {
-        score += 1;
-        scoreBoard.textContent = `Score: ${score}`;
+        score += 1
+        scoreBoard.textContent = `Score: ${score}`
         getCountry().then((data) => {
             removePicture()
             console.log(data.name)
-            // capitalName.textContent = data.capital
             placeCode(data.phone_code)
             message.textContent = ""
         })
@@ -103,48 +101,46 @@ const onSubmit = async (e) => {
         e.target.userInput.value = ""
     }
     setTimeout(() => {
-        message.classList.remove('flash-red', 'flash-orange');
-    }, 500);
-};
+        message.classList.remove('flash-red', 'flash-orange')
+    }, 500)
+}
 
 const placeCode = (code) => {
-    const phoneCode = document.createElement("p1");
+    const phoneCode = document.createElement("p1")
     phoneCode.className = "indent-wrapped"
     phoneCode.textContent = code
-    gameplaySection.appendChild(phoneCode);
+    gameplaySection.appendChild(phoneCode)
 };
 
 const removePicture = () => {
-    const pic = document.querySelector("#gameplaySection p1");
+    const pic = document.querySelector("#gameplaySection p1")
     if (pic) {
-        pic.remove();
+        pic.remove()
     }
-};
+}
 
 let timerOn
 startButton.addEventListener('click', (e) => {
-    // const capitalName = document.querySelector("#capitalName");
-    const randomiseTag = document.querySelector("#randomise");
-    e.preventDefault();
-    document.querySelector("#userInputSection").style.display = "block";
+    const randomiseTag = document.querySelector("#randomise")
+    e.preventDefault()
+    document.querySelector("#userInputSection").style.display = "block"
     getCountry().then((data) => {
         if (displayHistory.length > 1) {
             displayHistory.pop()
         }
-        removePicture();
-        console.log(data.name);
-        // capitalName.textContent = data.capital;
-        placeCode(data.phone_code);
-        message.textContent = "";
-        randomiseTag.textContent = "Next";
-        timerOn = 1;
-    });
+        removePicture()
+        console.log(data.name)
+        placeCode(data.phone_code)
+        message.textContent = ""
+        randomiseTag.textContent = "Next"
+        timerOn = 1
+    })
     if (timerOn != 1) {
-        timer = 150;
-        updateTimer();
+        timer = 150
+        updateTimer()
     }
-    submitButton.addEventListener("submit", onSubmit);
-});
+    submitButton.addEventListener("submit", onSubmit)
+})
 
 
 
