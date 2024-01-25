@@ -13,6 +13,7 @@ body {
     margin: 0px;
     min-height: 100vh;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .elements {
@@ -36,7 +37,6 @@ nav {
     font-family: 'Mooli', sans-serif;
     align-items: center;
     margin: 0 auto;
-
 }
 
 nav a,
@@ -87,6 +87,7 @@ nav .dropbtn:hover {
     background-color: #7C9D96;
     width: 120px;
     border-radius: 10px;
+    z-index: 9;
 }
 
 .dropdown-content a {
@@ -165,7 +166,7 @@ footer {
     width: 1200px;
     border: 1px solid #000000;
     margin: 10px;
-    z-index: 1;
+    z-index: 0;
     position: relative;
     border-radius: 10px;
     background-image: url("https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8yX3Bob3RvX29mX2FfcG9zdGVyX29mX3dvcmxkX21hcF9faXNvbGF0ZWRfb25fb180MDc2M2Q0Ni01NzkzLTQzMGMtYWNhYi0xNTJlZTgyMDczYTZfMS5qcGc.jpg");
