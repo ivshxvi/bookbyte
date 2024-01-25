@@ -1,3 +1,89 @@
+.custom-navbar {
+    display: flex;
+    background: linear-gradient(to right, #ba46086b, #ead4bca9, #e7ddd2a9);
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Mooli', sans-serif;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.custom-navbar a,
+.custom-navbar .dropdown .dropbtn {
+    float: left;
+    display: block;
+    color: white;
+    padding: 12px 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-variant: small-caps;
+    text-decoration: none;
+    line-height: 20px;
+    font-style: normal;
+}
+
+.custom-navbar .nav-item:hover {
+    background-color: #25252991;
+    border-radius: 10px;
+}
+
+.custom-navbar .dropbtn:hover {
+    background-color: #25252991;
+    border-radius: 10px;
+}
+
+.custom-navbar .dropdown {
+    overflow: hidden;
+    margin-left: 0px;
+}
+
+.custom-navbar .dropdown .dropbtn {
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.custom-navbar .dropdown-content {
+    margin-top: 10px;
+    display: none;
+    position: fixed;
+    background-color: #7C9D96;
+    width: 120px;
+    border-radius: 10px;
+    z-index: 9;
+}
+
+.custom-navbar .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 10px 0 10px 0;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-radius: 0%;
+    font-size: 16px;
+}
+
+.custom-navbar .dropdown-content a:hover {
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 85%;
+    text-decoration: none;
+}
+
+.custom-navbar .show {
+    display: block;
+}
+
+.custom-navbar .logo {
+    height: 100px;
+    display: block;
+}
+
 body {
     font-family: 'Mooli', sans-serif;
     margin: 0;
@@ -16,7 +102,6 @@ body {
 }
 
 .elements {
-
     margin-left: 12%;
     margin-right: 12%;
     margin-top: 0%;
@@ -25,96 +110,6 @@ body {
     border-radius: 20px;
     box-sizing: border-box;
     justify-content: center;
-}
-
-nav {
-    display: flex;
-    background: linear-gradient(to right, #ba46086b, #ead4bca9, #e7ddd2a9);
-    overflow: hidden;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Mooli', sans-serif;
-    align-items: center;
-    margin: 0 auto;
-}
-
-nav a,
-.dropdown .dropbtn {
-    float: left;
-    display: block;
-    color: white;
-
-    padding: 12px 10px;
-    margin-left: 10px;
-
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-variant: small-caps;
-    text-decoration: none;
-    line-height: 20px;
-    font-style: normal;
-}
-
-nav .nav-item:hover {
-    background-color: #25252991;
-    border-radius: 10px;
-
-}
-
-nav .dropbtn:hover {
-    background-color: #25252991;
-    border-radius: 10px;
-}
-
-.dropdown {
-    overflow: hidden;
-    margin-left: 0px;
-}
-
-.dropdown .dropbtn {
-    cursor: pointer;
-    border: none;
-    background-color: inherit;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.dropdown-content {
-    margin-top: 10px;
-    display: none;
-    position: fixed;
-    background-color: #7C9D96;
-    width: 120px;
-    border-radius: 10px;
-    z-index: 9;
-}
-
-.dropdown-content a {
-    float: none;
-    color: black;
-    padding: 10px 0 10px 0;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    border-radius: 0%;
-    font-size: 16px;
-
-}
-
-.dropdown-content a:hover {
-    background-color: #ffffff;
-    border-radius: 10px;
-    width: 85%;
-    text-decoration: none;
-}
-
-.show {
-    display: block;
-}
-
-.logo {
-    height: 100px;
-    display: block;
 }
 
 footer {
