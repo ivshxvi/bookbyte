@@ -53,7 +53,7 @@ GeoQuest is a geography game made for secondary year students in order to learn 
 
 ### Credits
 Developers & github usernames:
-Zephania Molla - zmolla99
-Ivan Selihov - ivshxvi
-Usama Navid - usama098
-Hania Khan - hk077
+- Zephania Molla - zmolla99
+- Ivan Selihov - ivshxvi
+- Usama Navid - usama098
+- Hania Khan - hk077
