@@ -28,41 +28,7 @@ body {
     box-sizing: border-box;
 }
 
-nav {
-    display: flex;
-    background: linear-gradient(to right, #ba46086b, #ead4bca9, #e7ddd2a9);
-    overflow: hidden;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Mooli', sans-serif;
-    align-items: center;
-    margin: 0 auto;
-}
 
-nav a,
-.dropdown .dropbtn {
-    float: left;
-    display: block;
-    color: white;
-    padding: 12px 10px;
-    margin-left: 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    font-variant: small-caps;
-    text-decoration: none;
-    line-height: 20px;
-    font-style: normal;
-}
-
-nav .nav-item:hover {
-    background-color: #25252991;
-    border-radius: 10px;
-}
-
-.logo {
-    height: 100px;
-    display: block;
-}
 
 
 .game-fact {
@@ -212,6 +178,40 @@ input[type="submit"]:hover {
     }
 }
 
+nav {
+    display: flex;
+    background: linear-gradient(to right, #ba46086b, #ead4bca9, #e7ddd2a9);
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Mooli', sans-serif;
+    align-items: center;
+    margin: 0 auto;
+}
+
+nav a,
+.dropdown .dropbtn {
+    float: left;
+    display: block;
+    color: white;
+
+    padding: 12px 10px;
+    margin-left: 10px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-variant: small-caps;
+    text-decoration: none;
+    line-height: 20px;
+    font-style: normal;
+}
+
+nav .nav-item:hover {
+    background-color: #25252991;
+    border-radius: 10px;
+
+}
+
 nav .dropbtn:hover {
     background-color: #25252991;
     border-radius: 10px;
@@ -249,6 +249,7 @@ nav .dropbtn:hover {
     text-align: center;
     border-radius: 0%;
     font-size: 16px;
+
 }
 
 .dropdown-content a:hover {
@@ -259,6 +260,11 @@ nav .dropbtn:hover {
 }
 
 .show {
+    display: block;
+}
+
+.logo {
+    height: 100px;
     display: block;
 }
 

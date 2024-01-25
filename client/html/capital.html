@@ -4,26 +4,28 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Flag mode</title>
+    <title>Game in play</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/gameplaypage.css'>
-    <script src="../js/flags.js" defer></script>
+    <script src="../js/capital.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">
+    <link rel="icon" href="" type="image/gif" />
 </head>
 
 <body>
 
     <nav class="navbar">
+        <img class="logo" src="../images/logo.png" />
         <a class="nav-item" href="landingpage.html">Home</a>
         <div class="dropdown">
             <button class="dropbtn" onclick="myFunction()">New Game
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content" id="myDropdown">
-                <a href="gameplaypage.html">Capital City</a>
-                <a href="flaggameplay.html">Flags</a>
+                <a href="capital.html">Capital City</a>
+                <a href="flag.html">Flags</a>
                 <a href="#">Currency</a>
                 <a href="#">Languages</a>
                 <a href="phonecode.html">Phone Code</a>
@@ -32,11 +34,12 @@
         <a class="nav-item" href="./learn.html">Learn</a>
     </nav>
 
+
     <div class="content">
         <div class="elements">
 
             <div class="game-fact">
-                <h1 class="game-mode">Guess the Country by its Flag</h1>
+                <h1 class="game-mode">Guess the Country by its Capital</h1>
                 <div id="timer" class="timer">Time: 00:00</div>
                 <div id="score" class="scoreboard">Score: 0</div>
             </div>
@@ -47,7 +50,7 @@
             </section>
 
             <section id="gameplaySection">
-                <h2 id="capitalName"></h2>
+                <h2 id="capitalName">Capital City</h2>
                 <button id="startButton" class="start-button">
                     <h id="randomise">Start</h>
                 </button>
@@ -64,6 +67,18 @@
 
         </div>
     </div>
+
+    <footer>
+        <img class="footer-logo" src="../images/globe.gif" alt="globe logo" />
+        <p class="copyright">Ⓒ GeoQuest-BookByte 2024</p>
+        <ul class="credits">
+            Credits
+            <li>Hania Khan</li>
+            <li>Ivan Selihov</li>
+            <li>Usama Navid</li>
+            <li>Zephania Molla</li>
+        </ul>
+    </footer>
 
 </body>
 
