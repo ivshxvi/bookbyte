@@ -88,7 +88,7 @@ const onSubmit = async (e) => {
             removePicture()
             console.log(data.name)
             capitalName.textContent = data.capital
-            placePicture(data.capital_picture)
+            placePicture(data.flag)
             message.textContent = ""
         })
         e.target.userInput.value = ""
@@ -134,7 +134,7 @@ startButton.addEventListener('click', (e) => {
         removePicture();
         console.log(data.name);
         capitalName.textContent = data.capital;
-        placePicture(data.capital_picture);
+        placePicture(data.flag);
         message.textContent = "";
         randomiseTag.textContent = "Next";
         timerOn = 1;
