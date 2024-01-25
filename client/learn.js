@@ -13,7 +13,7 @@ window.onclick = (e) => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('http://localhost:3000/geo')
+    fetch('https://ivans-bookbyte-api.onrender.com/geo')
         .then(response => response.json())
         .then(data => {
             displayCards(data)
