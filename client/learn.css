@@ -34,6 +34,8 @@ nav {
     font-size: 20px;
     font-weight: bold;
     font-family: 'Mooli', sans-serif;
+    align-items: center;
+    margin: 0 auto;
 
 }
 
@@ -107,6 +109,11 @@ nav .dropbtn:hover {
 }
 
 .show {
+    display: block;
+}
+
+.logo {
+    height: 100px;
     display: block;
 }
 

@@ -47,7 +47,7 @@ const getCountry = async () => {
     try {
         let data;
         do {
-            const response = await fetch('http://localhost:3000/random');
+            const response = await fetch('https://ivans-bookbyte-api.onrender.com/random');
             data = await response.json();
         } while (displayHistory.includes(data.capital));
 
