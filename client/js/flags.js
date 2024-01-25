@@ -83,9 +83,12 @@ const onSubmit = async (e) => {
     if (countryData.name.includes(userInput)) {
         score += 1
         scoreBoard.textContent = `Score: ${score}`
+        scoreBoard.classList.add('spin')
+        setTimeout(() => {
+            scoreBoard.classList.remove('spin')
+        }, 500)
         getCountry().then((data) => {
             removePicture()
-            console.log(data.name)
             placePicture(data.flag)
             message.textContent = ""
         })
@@ -121,7 +124,6 @@ const removePicture = () => {
 
 let timerOn
 startButton.addEventListener('click', (e) => {
-    const capitalName = document.querySelector("#capitalName")
     const randomiseTag = document.querySelector("#randomise")
     e.preventDefault()
     document.querySelector("#userInputSection").style.display = "block"
@@ -130,7 +132,6 @@ startButton.addEventListener('click', (e) => {
             displayHistory.pop()
         }
         removePicture()
-        console.log(data.name)
         placePicture(data.flag)
         message.textContent = ""
         randomiseTag.textContent = "Next"
