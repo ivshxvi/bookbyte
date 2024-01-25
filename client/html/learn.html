@@ -8,12 +8,16 @@
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='../css/learn.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../js/learn.js" defer></script>
 </head>
 
 <body>
 
-    <nav class="navbar">
+    <nav class="custom-navbar">
         <img class="logo" src="../images/logo.png" />
         <a class="nav-item" href="landingpage.html">Home</a>
         <div class="dropdown">
@@ -33,24 +37,28 @@
 
     <div class="content">
         <div class="elements">
-            <div id="cardContainer"></div>
+            <div id="carouselExample" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                </div>
+                <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
         </div>
     </div>
 
     <footer>
-        <img class="footer-logo" src="../images/globe.gif" alt="globe logo" />
-        <p class="copyright">Ⓒ GeoQuest-BookByte 2024</p>
-        <ul class="credits">
-            Credits:
-            <li>Hania Khan</li>
-            <li>Ivan Selihov</li>
-            <li>Usama Navid</li>
-            <li>Zephania Molla</li>
-        </ul>
+        <div class="footer-content">
+            <p class="copyright">Ⓒ GeoQuest-BookByte 2024</p>
+            <p class="credits">Credits: Hania Khan || Ivan Selihov || Usama Navid || Zephania Molla</p>
+        </div>
     </footer>
 
 </body>
-
-
 
 </html>

@@ -16,20 +16,22 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('https://ivans-bookbyte-api.onrender.com/geo')
         .then(response => response.json())
         .then(data => {
-            displayCards(data)
+            displayCardsInCarousel(data)
         })
         .catch(e => {
             console.error("Couldn't fetch data")
         })
 })
 
-const displayCards = (data) => {
-    const cardContainer = document.getElementById('cardContainer')
-    cardContainer.innerHTML = ''
-    data.forEach(obj => {
+const displayCardsInCarousel = (data) => {
+    const carouselInner = document.querySelector('.carousel-inner')
+    carouselInner.innerHTML = ''
+
+    data.forEach((obj, index) => {
         const card = document.createElement('div')
-        card.className = 'card'
+        card.className = `carousel-item ${index === 0 ? 'active' : ''}`
         card.innerHTML = `
+        <div class="card">
             <div class="top-section">
                 <h1 class="card-title">${obj.name}</h1>
             </div>
@@ -50,9 +52,15 @@ const displayCards = (data) => {
             <div class="bottom-section">
                 <p class="info">${obj.info}</p>
             </div>
-        `
-        cardContainer.appendChild(card)
+            <div class="comp-container">
+                <img class="comp" src="../images/compass.png" />
+            </div>
+        </div>
+      `
+        carouselInner.appendChild(card)
     })
 }
+
+
 
 
