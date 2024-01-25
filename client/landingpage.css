@@ -98,3 +98,35 @@ header {
     width: 13%;
     margin: 0 20px;
 }
+
+footer {
+    background-color: #e89f71;
+    color: #fff;
+    padding: 20px;
+    position: absolute;
+    bottom: -145px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+.footer-logo {
+    width: 90px;
+    margin-right: 10px;
+}
+
+.copyright {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.credits {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
