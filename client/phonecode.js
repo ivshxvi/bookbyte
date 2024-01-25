@@ -88,7 +88,7 @@ const onSubmit = async (e) => {
             removePicture()
             console.log(data.name)
             // capitalName.textContent = data.capital
-            placePicture(data.flag)
+            placeCode(data.phone_code)
             message.textContent = ""
         })
         e.target.userInput.value = ""
@@ -107,15 +107,15 @@ const onSubmit = async (e) => {
     }, 500);
 };
 
-const placePicture = (picUrl) => {
-    const pic = document.createElement("img");
-    pic.src = picUrl;
-    pic.classList.add("img");
-    gameplaySection.appendChild(pic);
+const placeCode = (code) => {
+    const phoneCode = document.createElement("p1");
+    phoneCode.className = "indent-wrapped"
+    phoneCode.textContent = code
+    gameplaySection.appendChild(phoneCode);
 };
 
 const removePicture = () => {
-    const pic = document.querySelector(".img");
+    const pic = document.querySelector("#gameplaySection p1");
     if (pic) {
         pic.remove();
     }
@@ -123,7 +123,7 @@ const removePicture = () => {
 
 let timerOn
 startButton.addEventListener('click', (e) => {
-    const capitalName = document.querySelector("#capitalName");
+    // const capitalName = document.querySelector("#capitalName");
     const randomiseTag = document.querySelector("#randomise");
     e.preventDefault();
     document.querySelector("#userInputSection").style.display = "block";
@@ -134,7 +134,7 @@ startButton.addEventListener('click', (e) => {
         removePicture();
         console.log(data.name);
         // capitalName.textContent = data.capital;
-        placePicture(data.flag);
+        placeCode(data.phone_code);
         message.textContent = "";
         randomiseTag.textContent = "Next";
         timerOn = 1;
