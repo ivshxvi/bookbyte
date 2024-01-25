@@ -6,8 +6,8 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Game in play</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='gameplaypage.css'>
-    <script src="phonecode.js" defer></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='../css/gameplaypage.css'>
+    <script src="../js/phonecode.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mooli&display=swap" rel="stylesheet">
@@ -17,7 +17,6 @@
 <body>
 
     <nav class="navbar">
-
         <a class="nav-item" href="landingpage.html">Home</a>
         <div class="dropdown">
             <button class="dropbtn" onclick="myFunction()">New Game
@@ -34,23 +33,19 @@
         <a class="nav-item" href="./learn.html">Learn</a>
     </nav>
 
-
     <div class="content">
         <div class="elements">
-            <div class="game-fact">
 
+            <div class="game-fact">
                 <h1 class="game-mode">Guess the Country by its Phone code</h1>
                 <div id="timer" class="timer">Time: 00:00</div>
-
                 <div id="score" class="scoreboard">Score: 0</div>
             </div>
-
 
             <section id="timesUp">
                 <div id="timesUpMessage" style="display: none;">Times Up</div>
                 <div id="finalScore" style="display: none;">Final Score: <span id="scoreDisplay">0</span></div>
             </section>
-
 
             <section id="gameplaySection">
                 <button id="startButton" class="start-button">
@@ -67,6 +62,7 @@
                     <input type="submit" value="Submit">
                 </form>
             </section>
+
         </div>
     </div>
 
