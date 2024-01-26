@@ -1,0 +1,272 @@
+.custom-navbar a:focus,
+.custom-navbar a:active,
+.dropdown .dropbtn:focus,
+.dropdown .dropbtn:active {
+    outline: none;
+}
+
+.custom-navbar {
+    display: flex;
+    background: linear-gradient(to right, #ba46086b, #ead4bca9, #e7ddd2a9);
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Mooli', sans-serif;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.custom-navbar a,
+.custom-navbar .dropdown .dropbtn {
+    float: left;
+    display: block;
+    color: white;
+    padding: 12px 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-variant: small-caps;
+    text-decoration: none;
+    line-height: 20px;
+    font-style: normal;
+}
+
+.custom-navbar .nav-item:hover {
+    background-color: #25252991;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.custom-navbar .dropbtn:hover {
+    background-color: #25252991;
+    border-radius: 10px;
+}
+
+.custom-navbar .dropdown {
+    overflow: hidden;
+    margin-left: 0px;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.custom-navbar .dropdown-content {
+    margin-top: 10px;
+    display: none;
+    position: fixed;
+    background-color: #7C9D96;
+    width: 120px;
+    border-radius: 10px;
+    z-index: 9;
+}
+
+.custom-navbar .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 10px 0 10px 0;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-radius: 0%;
+    font-size: 16px;
+}
+
+.custom-navbar .dropdown-content a:hover {
+    background-color: #ffffff;
+    color: black;
+    border-radius: 10px;
+    width: 85%;
+    text-decoration: none;
+}
+
+.custom-navbar .show {
+    display: block;
+}
+
+.custom-navbar .logo {
+    height: 100px;
+    display: block;
+}
+
+body {
+    font-family: 'Mooli', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/016/970/607/original/watercolor-forest-background-beautiful-hand-painted-misty-nature-landscape-with-trees-vector.jpg');
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    padding: 20px;
+    margin: 0px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+.elements {
+    margin-left: 12%;
+    margin-right: 12%;
+    margin-top: 0%;
+    padding: 10px;
+    min-height: 950px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+footer {
+    background-color: rgb(126, 187, 146);
+    color: #fff;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+    height: 90%;
+}
+
+.footer-content {
+    justify-content: center;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 20px;
+}
+
+.credits {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 10px;
+}
+
+#cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 1000px;
+    border: 1px solid #000000;
+    margin: 10px;
+    z-index: 0;
+    position: relative;
+    border-radius: 10px;
+    background-image: url("https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA4L3Jhd3BpeGVsX29mZmljZV8yX3Bob3RvX29mX2FfcG9zdGVyX29mX3dvcmxkX21hcF9faXNvbGF0ZWRfb25fb180MDc2M2Q0Ni01NzkzLTQzMGMtYWNhYi0xNTJlZTgyMDczYTZfMS5qcGc.jpg");
+    background-size: cover;
+    color: #000000;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(233, 235, 228, 0.582);
+    z-index: -1;
+    border-radius: 10px;
+}
+
+.top-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-weight: 900;
+    color: 187086(0, 0, 0);
+    font-family: cursive;
+}
+
+.middle-section {
+    display: flex;
+    height: 300px;
+    font-weight: 600;
+}
+
+.image-box {
+    flex: 1;
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.image-box.left {
+    padding-right: 10px;
+    border-radius: 40px;
+    object-fit: contain;
+}
+
+.image-box.right {
+    padding-left: 10px;
+    border-radius: 40px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.info-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 30px;
+}
+
+.card-content h1 {
+    font-weight: bold;
+    text-decoration: underline double;
+    margin-bottom: 5px;
+}
+
+.bottom-section {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    border-radius: 10px;
+    margin: 100px;
+    font-size: larger;
+}
+
+.comp-container {
+    text-align: center;
+    max-height: 200px;
+    max-width: 200px;
+    margin: auto;
+}
